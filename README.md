@@ -38,8 +38,8 @@ MarkMyPic is a Python application that allows you to add custom watermarks to yo
 
 4. Install the required dependencies using pip.
 
-  ```shell
-  pip install -r requirements.txt
+     ```shell
+     pip install -r requirements.txt
 
 ## Usage
 1. Launch the application by running the following command:
