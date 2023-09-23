@@ -1,6 +1,6 @@
 # MarkMyPic - Photo Watermarking App
 
-![MarkMyPic Logo](link-to-your-logo.png)
+![MarkMyPic Logo](./screenshots/logo.png)
 
 MarkMyPic is a Python application that allows you to add custom watermarks to your images. With a user-friendly interface built using Tkinter, you can protect and brand your photos effortlessly.
 
@@ -36,7 +36,7 @@ MarkMyPic is a Python application that allows you to add custom watermarks to yo
    ```shell
    cd MarkMyPic
 
-4. Install the required dependencies using pip.
+3. Install the required dependencies using pip.
 
      ```shell
      pip install -r requirements.txt
@@ -44,8 +44,8 @@ MarkMyPic is a Python application that allows you to add custom watermarks to yo
 ## Usage
 1. Launch the application by running the following command:
 
-   ```shell
-   python markmypic.py
+     ```shell
+     python markmypic.py
 
 2. Import your image(s) into the application.
 3. Design your custom watermark (text or image).
@@ -55,8 +55,9 @@ MarkMyPic is a Python application that allows you to add custom watermarks to yo
 7. Save or share your watermarked image(s).
 
 ## Screenshots
-![MarkMyPic Screenshot 1](/path/to/screenshots/screenshot1.png)
-![MarkMyPic Screenshot 2](/path/to/screenshots/screenshot2.png)
+
+![MarkMyPic Screenshot 1](./screenshots/screenshot1.png)
+![MarkMyPic Screenshot 2](./screenshots/screenshot2.png)
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
@@ -68,9 +69,6 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to customize this README file to include specific details about your project, such as installation instructions for different operating systems or any additional features. Providing clear and comprehensive documentation will help users understand and use your MarkMyPic application effectively.
-
 
 
 
