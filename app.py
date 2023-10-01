@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import filedialog, Menu, ttk
 from PIL import Image, ImageDraw, ImageFont, ImageTk
@@ -89,7 +90,10 @@ class WatermarkApp:
         outline = tk.StringVar()
         outline.set("Select the outline")
 
-        dropdown_font = tk.OptionMenu(popup, font, "Arial", "Times New Roman", "Courier New")
+        # get all the fonts from the assets folder
+        font_files = self.get_font_files()
+
+        dropdown_font = tk.OptionMenu(popup, font, *font_files)
         dropdown_font.pack()
         font_size_label = tk.Label(popup, text="Font Size:")
         font_size_label.pack()
@@ -123,6 +127,15 @@ class WatermarkApp:
                                    command=lambda: self.submit_settings(popup, font, font_size, font_color, position,
                                                                         opacity, rotation, padding, outline))
         submit_button.pack()
+
+    def get_font_files(self):
+        # get all the fonts from the assets folder
+        directory = "./assets/fonts"
+        font_files = []
+        for filename in os.listdir(directory):
+            if filename.endswith(".ttf"):
+                font_files.append(filename)
+        return font_files
 
     def submit_settings(self, popup, font, font_size, font_color, position, opacity, rotation, padding, outline):
         # Retrieve the selected values and do something with them
@@ -182,8 +195,12 @@ class WatermarkApp:
             watermark = Image.new('RGBA', self.image.size, (255, 255, 255, 0))
             draw = ImageDraw.Draw(watermark)
 
+            # select the font from assets folder
+            font = "assets/fonts/" + self.font
+
+
             # Get the font and size
-            font = ImageFont.truetype("arial.ttf", int(self.font_size))
+            font = ImageFont.truetype(font, int(self.font_size))
             text = self.watermark_entry.get()
 
             # Get the bounding box of the text
@@ -225,6 +242,7 @@ class WatermarkApp:
 
     def download_image(self):
         """ Download the watermarked image """
+        # need to enter a way to handle saving the different file  types, png, jpg, jpeg etc.
         if hasattr(self, 'image'):
             file_path = filedialog.asksaveasfile(filetypes=[("PNG", "*.png")])
             if file_path:
